@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { render } from 'react-dom'
+// import { render } from 'react-dom'
 import { Route, Switch} from 'react-router-dom'
-import Drilldown from 'react-router-drilldown'
-import axios from 'axios';
+// import Drilldown from 'react-router-drilldown'
 import Home from './views/Home';
 import People from './views/People';
 import Films from './views/Films';
