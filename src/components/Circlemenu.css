@@ -1,0 +1,14 @@
+#circle{
+    width: 100px;
+    height: 100px;
+    background-color: #aaa;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+}
+
+#circletext{
+    width: 100%;
+    text-align: center;
+}

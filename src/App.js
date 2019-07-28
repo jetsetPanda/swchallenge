@@ -7,13 +7,11 @@ import axios from 'axios';
 import Home from './views/Home';
 import People from './views/People';
 import Films from './views/Films';
+import Filmsdetail from './views/Filmsdetail';
 import Starships from './views/Starships';
 import Vehicles from './views/Vehicles';
 import Species from './views/Species';
 import Planets from './views/Planets';
-
-
-
 
 export default function App() {
   return (
@@ -25,6 +23,7 @@ export default function App() {
       <Route exact path="/vehicles" component={Vehicles} />
       <Route exact path="/species" component={Species} />
       <Route exact path="/planets" component={Planets} />
+      <Route path="/films/:id" exact component={Filmsdetail} />
     </Switch>      
   )
 }
