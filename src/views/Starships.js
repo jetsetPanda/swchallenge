@@ -33,7 +33,7 @@ export default function Starships(props) {
       <h1>STARSHIPS</h1>
 
         {dataset.map((starship, index) => (
-        <Link to={{ pathname: '/starships/:id', state: { id : index+1 }}}>
+        <Link to={{ pathname: '/starships/:id', state: { url : starship.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
                     <Circlemenu/><h3 className="card-title">{starship.name}</h3>

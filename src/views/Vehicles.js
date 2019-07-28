@@ -33,7 +33,7 @@ export default function Vehicles(props) {
       <h1>PLANETS</h1>
 
         {dataset.map((vehicle, index) => (
-        <Link to={{ pathname: '/vehicles/:id', state: { id : index+1 }}}>
+        <Link to={{ pathname: '/vehicles/:id', state: { url : vehicle.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
                     <Circlemenu/><h3 className="card-title">{vehicle.name}</h3>

@@ -33,7 +33,7 @@ export default function People(props) {
       <h1>PLANETS</h1>
 
         {dataset.map((planet, index) => (
-        <Link to={{ pathname: '/planets/:id', state: { id : index+1 }}}>
+        <Link to={{ pathname: '/planets/:id', state: { url : planet.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
                     <Circlemenu/><h3 className="card-title">{planet.name}</h3>

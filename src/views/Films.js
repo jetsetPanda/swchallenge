@@ -33,7 +33,7 @@ export default function Films(props) {
       <h1>Star Wars Films</h1>
 
         {dataset.map((film, index) => (
-        <Link to={{ pathname: '/films/:id', state: { id : index+1 }}}>
+        <Link to={{ pathname: '/films/:id', state: { url : film.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
                 <Circlemenu/><h3 className="card-title">Episode {film.episode_id}: {film.title}</h3>

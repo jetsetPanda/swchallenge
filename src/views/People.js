@@ -33,7 +33,7 @@ export default function People(props) {
       <h1>PEOPLE</h1>
 
         {dataset.map((people, index) => (
-        <Link to={{ pathname: '/people/:id', state: { id : index+1 }}}>
+        <Link to={{ pathname: '/people/:id', state: { url : people.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
                     <Circlemenu/><h3 className="card-title">{people.name}</h3>
