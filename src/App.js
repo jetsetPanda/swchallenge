@@ -6,11 +6,16 @@ import { Route, Switch} from 'react-router-dom'
 import Home from './views/Home';
 import People from './views/People';
 import Films from './views/Films';
-import Filmsdetail from './views/Filmsdetail';
 import Starships from './views/Starships';
 import Vehicles from './views/Vehicles';
 import Species from './views/Species';
 import Planets from './views/Planets';
+import Filmsdetail from './views/Filmsdetail';
+import Peopledetail from './views/Peopledetail';
+import Planetsdetail from './views/Planetsdetail';
+import Speciesdetail from './views/Speciesdetail';
+import Starshipsdetail from './views/Starshipsdetail';
+import Vehiclesdetail from './views/Vehiclesdetail';
 
 export default function App() {
   return (
@@ -23,6 +28,14 @@ export default function App() {
       <Route exact path="/species" component={Species} />
       <Route exact path="/planets" component={Planets} />
       <Route path="/films/:id" exact component={Filmsdetail} />
+      <Route path="/people/:id" exact component={Peopledetail} />
+      <Route path="/planets/:id" exact component={Planetsdetail} />
+      <Route path="/species/:id" exact component={Speciesdetail} />
+      <Route path="/starships/:id" exact component={Starshipsdetail} />
+      <Route path="/vehicles/:id" exact component={Vehiclesdetail} />
+
+
+
     </Switch>      
   )
 }

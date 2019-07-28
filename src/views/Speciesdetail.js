@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Circlemenu from '../components/Circlemenu';
 
-export default function Filmsdetail(props) {
+export default function Speciesdetail(props) {
   // init state
   const initialState = {
     dataset: [],
@@ -17,10 +17,10 @@ export default function Filmsdetail(props) {
   // useEffect method to get SWAPI data (my alternative to LM componentDidMount)
   useEffect(() => {
       const fetchData = async () => {
-          const { data } = await axios(`https://swapi.co/api/films/${id}/`);
+          const { data } = await axios(`https://swapi.co/api/species/${id}/`);
 
           setDataset(data);// results array to dataset: {} above
-          console.log(data);
+          console.log("Dataset is: ",data);
       }
       //asynchronious function is invoked by:
       fetchData();
@@ -30,8 +30,10 @@ export default function Filmsdetail(props) {
       <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
   ) : (
     <div className="container">
-      <div className="jumbotron"><Circlemenu/><h1>{dataset.title}</h1></div>
-      <h2>Episode {dataset.episode_id} | Release: {dataset.release_date}</h2>
+      <div className="jumbotron"><Circlemenu/><h1>{dataset.name}</h1></div>
+      <h2>      
+          Name: {dataset.name} Classification: {dataset.classification} Designation: {dataset.designation} Average Height: {dataset.average_height} Skin Colors: {dataset.skin_colors} Hair Colors: {dataset.hair_colors} Terrain: {dataset.terrain} Language: {dataset.language}
+      </h2>
     </div>
   )
 }

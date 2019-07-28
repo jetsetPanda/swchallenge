@@ -6,32 +6,33 @@ import Circlemenu from '../components/Circlemenu';
 export default function Films(props) {
   // init state
   const initialState = {
-      films: [],
+      dataset: [],
       isLoading: true,
   }
 
   // user state getter and setter via useState()
-  const [films, setFilm] = useState(initialState);
+  const [dataset, setDataset] = useState(initialState);
 
   // useEffect method to get SWAPI data (my alternative to LM componentDidMount)
   useEffect(() => {
-      const fetchFilms = async () => {
+      const fetchData = async () => {
           const { data } = await axios(`https://swapi.co/api/films/`);
 
-          setFilm(data.results);// results array to films: {} above
+          setDataset(data.results);// results array to films: {} above
           console.log(data.results);
       }
       //asynchronious function is invoked by:
-      fetchFilms();
+      fetchData();
   }, []) // "[]" prevents useEffect from executing infinite loop
 
-  return films.isLoading? (
+  return dataset.isLoading? (
       <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
   ) : (
     <div className="container">
+
       <h1>Star Wars Films</h1>
 
-        {films.map((film, index) => (
+        {dataset.map((film, index) => (
         <Link to={{ pathname: '/films/:id', state: { id : index+1 }}}>
             <div className="card mb-1">
                 <div className="card-body">
