@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css';
 import axios from 'axios';
 import Circlejumbo from '../components/Circlejumbo';
+import Spinner from 'react-bootstrap/Spinner';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Navbar from 'react-bootstrap/Navbar';
+import Infobox from '../components/Infobox';
+import Infoboxarray from '../components/Infoboxarray';
 
 export default function Filmsdetail(props) {
   // init state
@@ -27,12 +33,36 @@ export default function Filmsdetail(props) {
   }, [url]) // "[]" prevents useEffect from executing infinite loop
 
   return dataset.isLoading? (
-      <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
+    <Spinner animation="border" role="status">
+    <span className="sr-only">Loading...</span>
+    </Spinner>
   ) : (
     <div className="container">
-      <div></div>
-      <div className="jumbotron text-center"><Circlejumbo text={dataset.title}/><h1>{dataset.title}</h1></div>
-      <h2>Episode {dataset.episode_id} | Release: {dataset.release_date}</h2>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand className="mx-auto">
+          {dataset.title}
+        </Navbar.Brand>
+      </Navbar>
+
+      <Jumbotron className="text-center bg-dark"><Circlejumbo text={dataset.title}/>
+      <p className="swyellow">{dataset.opening_crawl}</p>
+      </Jumbotron>
+      
+      <Infobox name={'Episode ID'} value={dataset.episode_id} />
+      <Infobox name={'Director'} value={dataset.director} />
+      <Infobox name={'Producer'} value={dataset.producer} />
+      <Infobox name={'Release Date'} value={dataset.release_date} />
+      <Infoboxarray name={'Characters'} value={dataset.characters} />
+      <Infoboxarray name={'Planets'} value={dataset.planets} />
+      <Infoboxarray name={'Starships'} value={dataset.starships} />
+      <Infoboxarray name={'Vehicles'} value={dataset.vehicles} />
+      <Infoboxarray name={'Species'} value={dataset.species} />
+      <Infobox name={'Created'} value={dataset.created} />
+      <Infobox name={'Edited'} value={dataset.edited} />
+      <Infobox name={'URL'} value={dataset.url} />
+
+      {/* <Infobox name={''} value={dataset.} /> */}
+
     </div>
   )
 }

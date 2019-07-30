@@ -1,14 +1,14 @@
-#circle{
+#jumbocircle{
     width: 150px;
     height: 150px;
-    background-color: #aaa;
+    background-color: #FFFFFF;
     border-radius: 50%;
 
     display: inline-block;
     align-items: center;
 }
 
-#circletext h1{
+#jumbofont h1{
     margin: 0;
     padding-top: 30px;
     width: 100%;

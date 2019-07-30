@@ -12,8 +12,8 @@ export default function Circlemenu(props) {
     console.log('CircleMenu initials are: ',initials);
 
     return (
-        <div id="circle">
-            <div id="circletext"><h1>{initials}</h1></div>
+        <div id="jumbocircle">
+            <div id="jumbofont"><h1>{initials}</h1></div>
         </div>
     )
 

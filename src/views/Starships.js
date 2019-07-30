@@ -36,7 +36,7 @@ export default function Starships(props) {
         <Link to={{ pathname: '/starships/:id', state: { url : starship.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu   text={starship.name}/><h3 className="card-title">{starship.name}</h3>
+                    <Circlemenu text={starship.name}/><h3 className="card-title">{starship.name}</h3>
                     <h4 className="card-subtitle mb-3 text-muted">
                         {starship.model}            
                     </h4>
