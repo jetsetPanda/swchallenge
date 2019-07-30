@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Circlemenu from '../components/Circlemenu';
+import Circlejumbo from '../components/Circlejumbo';
 
 export default function Peopledetail(props) {
   // init state
@@ -30,7 +30,7 @@ export default function Peopledetail(props) {
       <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
   ) : (
     <div className="container">
-      <div className="jumbotron"><Circlemenu/><h1>{dataset.name}</h1></div>
+      <div className="jumbotron"><Circlejumbo text={dataset.name}/><h1>{dataset.name}</h1></div>
       <h2>      
           Name: {dataset.name} Rotation Period: {dataset.rotation_period} Orbital Period: {dataset.orbital_period} Diameter: {dataset.diameter} Climate: {dataset.climate} Gravity: {dataset.gravity} Terrain: {dataset.terrain} Surface Water: {dataset.surface_water}
       </h2>

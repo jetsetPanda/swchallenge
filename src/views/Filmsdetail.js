@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Circlemenu from '../components/Circlemenu';
+import Circlejumbo from '../components/Circlejumbo';
 
 export default function Filmsdetail(props) {
   // init state
@@ -30,7 +30,7 @@ export default function Filmsdetail(props) {
       <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
   ) : (
     <div className="container">
-      <div className="jumbotron"><Circlemenu/><h1>{dataset.title}</h1></div>
+      <div className="jumbotron"><Circlejumbo text={dataset.title}/><h1>{dataset.title}</h1></div>
       <h2>Episode {dataset.episode_id} | Release: {dataset.release_date}</h2>
     </div>
   )

@@ -36,7 +36,7 @@ export default function Species(props) {
         <Link to={{ pathname: '/species/:id', state: { url : species.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu/><h3 className="card-title">{species.name}</h3>
+                    <Circlemenu  text={species.name}/><h3 className="card-title">{species.name}</h3>
                     <h4 className="card-subtitle mb-3 text-muted">
                         {species.classification}
                     </h4>

@@ -36,7 +36,7 @@ export default function People(props) {
         <Link to={{ pathname: '/planets/:id', state: { url : planet.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu/><h3 className="card-title">{planet.name}</h3>
+                    <Circlemenu  text={planet.name}/><h3 className="card-title">{planet.name}</h3>
                     <h4 className="card-subtitle mb-3 text-muted">
                         {planet.diameter}            
                     </h4>

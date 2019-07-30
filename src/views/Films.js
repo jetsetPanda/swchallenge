@@ -36,7 +36,7 @@ export default function Films(props) {
         <Link to={{ pathname: '/films/:id', state: { url : film.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
-                <Circlemenu/><h3 className="card-title">Episode {film.episode_id}: {film.title}</h3>
+                <Circlemenu text={film.title}/><h3 className="card-title">Episode {film.episode_id}: {film.title}</h3>
                 <h4 className="card-subtitle mb-3 text-muted">
                     {film.opening_crawl}<br/>
                     Id: {index+1}<br/>
