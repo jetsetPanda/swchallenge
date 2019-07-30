@@ -59,10 +59,9 @@ export default function Peopledetail(props) {
       <Infobox name={'Diameter'} value={dataset.diameter} />
       <Infobox name={'Climate'} value={dataset.climate} />
       <Infobox name={'Gravity'} value={dataset.gravity} />
-      <Infobox name={'Terrain'} value={dataset.surface_water} />  
-      <Infobox name={'Surface Water'} value={dataset.gender} />
-      <Infobox name={'Population'} value={dataset.population} />
-      <Infoboxarray name={'Residents'} value={dataset.residents} />     
+      <Infobox name={'Terrain'} value={dataset.terrain} />  
+      <Infobox name={'Surface Water'} value={dataset.surface_water} />
+      <Infobox name={'Population'} value={dataset.population} />    
       <Infoboxarray name={'Films'} value={dataset.films} />
       <Infobox name={'Created'} value={dataset.created} />
       <Infobox name={'Edited'} value={dataset.edited} />

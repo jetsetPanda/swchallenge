@@ -4,6 +4,7 @@ import axios from 'axios';
 import Circlemenu from '../components/Circlemenu';
 import Spinner from 'react-bootstrap/Spinner';
 import Navicategory from '../components/Navicategory';
+import Quote from '../components/Quote';
 
 export default function Species(props) {
   // init state
@@ -35,6 +36,7 @@ export default function Species(props) {
     <div className="container">
 
       <Navicategory brand={'SPECIES'}/>
+      <Quote />
 
         {dataset.map((species, index) => (
         <Link to={{ pathname: '/species/:id', state: { url : species.url }}} style={{textDecoration: 'none'}}>

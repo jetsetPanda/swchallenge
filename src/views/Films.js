@@ -5,7 +5,7 @@ import Circlemenu from '../components/Circlemenu';
 import Spinner from 'react-bootstrap/Spinner';
 import Navicategory from '../components/Navicategory';
 import Synopsys from '../components/Synopsys';
-
+import Quote from '../components/Quote';
 
 export default function Films(props) {
   // init state
@@ -37,7 +37,7 @@ export default function Films(props) {
     <div className="container">
 
       <Navicategory brand={'FILMS'}/>
-      
+      <Quote />
       {dataset.map((film, index) => (
 
         

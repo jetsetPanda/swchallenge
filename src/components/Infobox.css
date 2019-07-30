@@ -4,3 +4,7 @@
     height: 30px;
     margin: 25px 0;
 };
+
+.padright {
+    margin-left: 20px;
+}

@@ -4,6 +4,7 @@ import axios from 'axios';
 import Circlemenu from '../components/Circlemenu';
 import Spinner from 'react-bootstrap/Spinner';
 import Navicategory from '../components/Navicategory';
+import Quote from '../components/Quote';
 
 export default function People(props) {
   // init state
@@ -35,6 +36,7 @@ export default function People(props) {
     <div className="container">
 
       <Navicategory brand={'PLANETS'}/>
+      <Quote />
 
         {dataset.map((planet, index) => (
         <Link to={{ pathname: '/planets/:id', state: { url : planet.url }}} style={{textDecoration: 'none'}}>

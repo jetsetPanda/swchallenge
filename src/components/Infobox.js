@@ -1,12 +1,10 @@
 import React from 'react';
 import './Infobox.css';
 
-
-
 const Infobox = props => (
         <div>
-            <h6>{props.name}</h6>
-            <h4>{props.value}<br/></h4>
+            <h6 className="padright">{props.name}</h6>
+            <h4 className="padright">{props.value}<br/></h4>
             <div className="blackbar"></div>
         </div>
 )
