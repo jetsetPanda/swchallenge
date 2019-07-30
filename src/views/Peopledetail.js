@@ -63,15 +63,10 @@ export default function Peopledetail(props) {
       <Infobox name={'Gender'} value={dataset.gender} />
       <Infobox name={'Homeworld'} value={dataset.homeworld} />
       <Infoboxarray name={'Films'} value={dataset.films} />     
-      {/* <Infoboxarray name={'Planets'} value={dataset.planets} /> */}
-      <Infoboxarray name={'Starships'} value={dataset.starships} />
-      <Infoboxarray name={'Vehicles'} value={dataset.vehicles} />
       <Infoboxarray name={'Species'} value={dataset.species} />
       <Infobox name={'Created'} value={dataset.created} />
       <Infobox name={'Edited'} value={dataset.edited} />
       <Infobox name={'URL'} value={dataset.url} />
-
-      {/* <Infobox name={''} value={dataset.} /> */}
 
     </div>
   )

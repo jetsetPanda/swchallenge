@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import { withRouter, Link } from 'react-router-dom';
-// import './Navbar.css';
+
 
 export default function Navicategory(props) {
 

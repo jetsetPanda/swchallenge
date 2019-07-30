@@ -53,3 +53,8 @@
 .bggray {
   background-color: #E3E3E3;
 }
+
+.smtext {
+  font-size: 12px;
+  font-style: italic;
+}
