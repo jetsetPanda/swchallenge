@@ -4,6 +4,8 @@ import axios from 'axios';
 import Circlemenu from '../components/Circlemenu';
 import Spinner from 'react-bootstrap/Spinner';
 import Navicategory from '../components/Navicategory';
+import Synopsys from '../components/Synopsys';
+
 
 export default function Films(props) {
   // init state
@@ -37,13 +39,20 @@ export default function Films(props) {
       <Navicategory brand={'FILMS'}/>
       
       {dataset.map((film, index) => (
-        <Link to={{ pathname: '/films/:id', state: { url : film.url }}}>
+
+        
+        <Link to={{ pathname: '/films/:id', state: { url : film.url }}} style={{textDecoration: 'none'}} >
             <div className="card mb-1">
-                <div className="card-body">
-                  <Circlemenu text={film.title}/><h3 className="card-title">{film.title}</h3>
-                  <h4 className="card-subtitle mb-3 text-muted">
-                      {film.opening_crawl}<br/>
-                  </h4>
+                <div className="card-body ">
+                  <div className="d-inline">
+                    <Circlemenu text={film.title}/>
+                  </div>
+                  <div className="d-inline">
+                    <h3 className="card-title menufont">{film.title}</h3>
+                    <p className="card-subtitle mb-3 menufont">
+                        <Synopsys crawl={film.opening_crawl}/>...<br/>
+                    </p>                    
+                  </div>
                 </div>
             </div>
         </Link>

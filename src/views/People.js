@@ -34,11 +34,11 @@ export default function People(props) {
       <Navicategory brand={'PEOPLE'}/>
 
         {dataset.map((people, index) => (
-        <Link to={{ pathname: '/people/:id', state: { url : people.url }}}>
+        <Link to={{ pathname: '/people/:id', state: { url : people.url }}} style={{textDecoration: 'none'}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu  text={people.name}/><h3 className="card-title">{people.name}</h3>
-                    <h4 className="card-subtitle mb-3 text-muted">
+                    <Circlemenu  text={people.name}/><h3 className="card-title menufont">{people.name}</h3>
+                    <h4 className="card-subtitle mb-3  menufont">
                         {people.birth_year}            
                     </h4>
                 </div>

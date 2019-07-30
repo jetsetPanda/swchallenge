@@ -9,7 +9,7 @@ export default function Species(props) {
   // init state
   const initialState = {
       dataset: [],
-      isLoading: true,
+      isLoading: true, 
   }
 
   // user state getter and setter via useState()
@@ -37,11 +37,11 @@ export default function Species(props) {
       <Navicategory brand={'SPECIES'}/>
 
         {dataset.map((species, index) => (
-        <Link to={{ pathname: '/species/:id', state: { url : species.url }}}>
+        <Link to={{ pathname: '/species/:id', state: { url : species.url }}} style={{textDecoration: 'none'}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu  text={species.name}/><h3 className="card-title">{species.name}</h3>
-                    <h4 className="card-subtitle mb-3 text-muted">
+                    <Circlemenu  text={species.name}/><h3 className="card-title menufont">{species.name}</h3>
+                    <h4 className="card-subtitle mb-3  menufont">
                         {species.classification}
                     </h4>
                 </div>

@@ -37,11 +37,11 @@ export default function Starships(props) {
       <Navicategory brand={'STARSHIPS'}/>
 
         {dataset.map((starship, index) => (
-        <Link to={{ pathname: '/starships/:id', state: { url : starship.url }}}>
+        <Link to={{ pathname: '/starships/:id', state: { url : starship.url }}} style={{textDecoration: 'none'}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu text={starship.name}/><h3 className="card-title">{starship.name}</h3>
-                    <h4 className="card-subtitle mb-3 text-muted">
+                    <Circlemenu text={starship.name}/><h3 className="card-title  menufont">{starship.name}</h3>
+                    <h4 className="card-subtitle mb-3  menufont">
                         {starship.model}            
                     </h4>
                 </div>

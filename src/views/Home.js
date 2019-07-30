@@ -49,7 +49,7 @@ export default function Home() {
         <Link to="/starships" style={{textDecoration: 'none'}}>
             <div className="card mb-1">
                 <div className="card-body">
-                <h2 className="menufont"><img className="padright" src="https://res.cloudinary.com/jetsetengine/image/upload/v1564469162/swapi/noun_spaceship_1311585_hnpr12.png"   width="48" height="45" align="left"/>Starships</h2>
+                <h2 className="menufont"><img className="padright" src="https://res.cloudinary.com/jetsetengine/image/upload/v1564469162/swapi/noun_spaceship_1311585_3x_n6xniy.png"   width="48" height="45" align="left"/>Starships</h2>
                 </div>
             </div>
         </Link>

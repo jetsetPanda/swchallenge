@@ -7,6 +7,8 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Navbar from 'react-bootstrap/Navbar';
 import Infobox from '../components/Infobox';
 import Infoboxarray from '../components/Infoboxarray';
+import Button from 'react-bootstrap/Button';
+import { withRouter, Link } from 'react-router-dom';
 
 export default function Speciesdetail(props) {
   // init state
@@ -39,6 +41,9 @@ export default function Speciesdetail(props) {
   ) : (
     <div className="container">
       <Navbar bg="dark" variant="dark">
+        <Link to={{ pathname: '/species'}}>
+          <Button variant="outline-light text-white">&#8249;</Button>
+        </Link>  
         <Navbar.Brand className="mx-auto">
           {dataset.name}
         </Navbar.Brand>

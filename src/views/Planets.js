@@ -37,11 +37,11 @@ export default function People(props) {
       <Navicategory brand={'PLANETS'}/>
 
         {dataset.map((planet, index) => (
-        <Link to={{ pathname: '/planets/:id', state: { url : planet.url }}}>
+        <Link to={{ pathname: '/planets/:id', state: { url : planet.url }}} style={{textDecoration: 'none'}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu  text={planet.name}/><h3 className="card-title">{planet.name}</h3>
-                    <h4 className="card-subtitle mb-3 text-muted">
+                    <Circlemenu  text={planet.name}/><h3 className="card-title menufont">{planet.name}</h3>
+                    <h4 className="card-subtitle mb-3  menufont">
                         {planet.diameter}            
                     </h4>
                 </div>

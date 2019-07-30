@@ -13,7 +13,7 @@ export default function Circlemenu(props) {
 
     return (
         <div id="circle">
-            <div id="circletext"><h1>{initials}</h1></div>
+            <div id="circletext"><h3>{initials}</h3></div>
         </div>
     )
 

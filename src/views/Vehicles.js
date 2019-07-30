@@ -37,11 +37,11 @@ export default function Vehicles(props) {
       <Navicategory brand={'VEHICLES'}/>
 
         {dataset.map((vehicle, index) => (
-        <Link to={{ pathname: '/vehicles/:id', state: { url : vehicle.url }}}>
+        <Link to={{ pathname: '/vehicles/:id', state: { url : vehicle.url }}} style={{textDecoration: 'none'}}>
             <div className="card mb-1">
                 <div className="card-body">
-                    <Circlemenu  text={vehicle.name}/><h3 className="card-title">{vehicle.name}</h3>
-                    <h4 className="card-subtitle mb-3 text-muted">
+                    <Circlemenu  text={vehicle.name}/><h3 className="card-title menufont">{vehicle.name}</h3>
+                    <h4 className="card-subtitle mb-3  menufont">
                         {vehicle.model}            
                     </h4>
                 </div>
