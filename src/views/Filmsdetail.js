@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Infobox from '../components/Infobox';
 import Infoboxarray from '../components/Infoboxarray';
 
+
 export default function Filmsdetail(props) {
   // init state
   const initialState = {

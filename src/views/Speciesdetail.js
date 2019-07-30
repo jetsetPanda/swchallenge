@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css';
 import axios from 'axios';
 import Circlejumbo from '../components/Circlejumbo';
+import Spinner from 'react-bootstrap/Spinner';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Navbar from 'react-bootstrap/Navbar';
+import Infobox from '../components/Infobox';
+import Infoboxarray from '../components/Infoboxarray';
 
 export default function Speciesdetail(props) {
   // init state
@@ -27,13 +33,36 @@ export default function Speciesdetail(props) {
   }, [url]) // "[]" prevents useEffect from executing infinite loop
 
   return dataset.isLoading? (
-      <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
+    <Spinner animation="border" role="status">
+    <span className="sr-only">Loading...</span>
+    </Spinner>
   ) : (
     <div className="container">
-      <div className="jumbotron"><Circlejumbo text={dataset.name}/><h1>{dataset.name}</h1></div>
-      <h2>      
-          Name: {dataset.name} Classification: {dataset.classification} Designation: {dataset.designation} Average Height: {dataset.average_height} Skin Colors: {dataset.skin_colors} Hair Colors: {dataset.hair_colors} Terrain: {dataset.terrain} Language: {dataset.language}
-      </h2>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand className="mx-auto">
+          {dataset.name}
+        </Navbar.Brand>
+      </Navbar>
+
+      <Jumbotron className="text-center bg-dark"><Circlejumbo text={dataset.name}/>
+      <p className="swyellow">{dataset.classification}</p>
+      </Jumbotron>
+      
+      <Infobox name={'Designation'} value={dataset.designation} />
+      <Infobox name={'Average Height'} value={dataset.average_height} />
+      <Infobox name={'Skin Colors'} value={dataset.skin_colors} />
+      <Infobox name={'Hair Colors'} value={dataset.hair_colors} />
+      <Infobox name={'Eye Colors'} value={dataset.eye_colors} />
+      <Infobox name={'Average Lifespan'} value={dataset.average_lifespan} />
+      <Infobox name={'Gender'} value={dataset.gender} />
+      <Infobox name={'Homeworld'} value={dataset.homeworld} />
+      <Infobox name={'Language'} value={dataset.language} />     
+      <Infoboxarray name={'People'} value={dataset.people} />
+      <Infoboxarray name={'Films'} value={dataset.films} />
+      <Infobox name={'Created'} value={dataset.created} />
+      <Infobox name={'Edited'} value={dataset.edited} />
+      <Infobox name={'URL'} value={dataset.url} />
+
     </div>
   )
 }

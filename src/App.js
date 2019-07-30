@@ -78,26 +78,3 @@ const PlanetsRoute = ({ match }) => (
     </Router>      
   )
 }
-
-
-
-
-// export default function App() {
-//   return (
-//     <Switch>
-//       <Route exact path="/" component={Home} />
-//       <Route exact path="/people" component={People} />
-      // <Route exact path="/films" component={Films} />
-      // <Route exact path="/starships" component={Starships} />
-      // <Route exact path="/vehicles" component={Vehicles} />
-      // <Route exact path="/species" component={Species} />
-      // <Route exact path="/planets" component={Planets} />
-//       <Route path="/films/:id" exact component={Filmsdetail} />
-//       <Route path="/people/:id" exact component={Peopledetail} />
-//       <Route path="/planets/:id" exact component={Planetsdetail} />
-//       <Route path="/species/:id" exact component={Speciesdetail} />
-//       <Route path="/starships/:id" exact component={Starshipsdetail} />
-//       <Route path="/vehicles/:id" exact component={Vehiclesdetail} />
-//     </Switch>      
-//   )
-// }

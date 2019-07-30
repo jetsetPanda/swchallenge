@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css';
 import axios from 'axios';
 import Circlejumbo from '../components/Circlejumbo';
+import Spinner from 'react-bootstrap/Spinner';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Navbar from 'react-bootstrap/Navbar';
+import Infobox from '../components/Infobox';
+import Infoboxarray from '../components/Infoboxarray';
 
 export default function Vehiclesdetail(props) {
   // init state
@@ -27,13 +33,35 @@ export default function Vehiclesdetail(props) {
   }, [url]) // "[]" prevents useEffect from executing infinite loop
 
   return dataset.isLoading? (
-      <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
+    <Spinner animation="border" role="status">
+    <span className="sr-only">Loading...</span>
+    </Spinner>
   ) : (
     <div className="container">
-      <div className="jumbotron"><Circlejumbo text={dataset.name}/><h1>{dataset.name}</h1></div>
-      <h2>      
-          Name: {dataset.name} Model: {dataset.model} Manufacturer: {dataset.manufacturer} Cost in Credits: {dataset.cost_in_credits} Length: {dataset.length} max Atmospheric Speed: {dataset.max_atmosphering_speed} Crew: {dataset.crew} Passengers: {dataset.passengers}
-      </h2>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand className="mx-auto">
+          {dataset.name}
+        </Navbar.Brand>
+      </Navbar>
+
+      <Jumbotron className="text-center bg-dark"><Circlejumbo text={dataset.name}/>
+      <p className="swyellow">{dataset.model}</p>
+      </Jumbotron>
+      
+      <Infobox name={'Manufacturer'} value={dataset.manufacturer} />
+      <Infobox name={'Cost in Credits'} value={dataset.cost_in_credits} />
+      <Infobox name={'Length'} value={dataset.length} />
+      <Infobox name={'Max Atmosphering Speed'} value={dataset.max_atmosphering_speed} />
+      <Infobox name={'Crew'} value={dataset.crew} />
+      <Infobox name={'Passengers'} value={dataset.passengers} />  
+      <Infobox name={'Cargo Capacity'} value={dataset.cargo_capacity} />
+      <Infobox name={'Consumables'} value={dataset.consumables} />
+      <Infobox name={'Vehicle Class'} value={dataset.vehicle_class} />
+      <Infoboxarray name={'Films'} value={dataset.films} />     
+      <Infobox name={'Created'} value={dataset.created} />
+      <Infobox name={'Edited'} value={dataset.edited} />
+      <Infobox name={'URL'} value={dataset.url} />
+
     </div>
   )
 }

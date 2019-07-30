@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { withRouter, Link } from 'react-router-dom';
-import './Navbar.css'
+// import './Navbar.css';
 
-export default class Navbar extends Component {
+export default class Navibar extends Component {
     constructor(props) {
       super(props);
     }
@@ -14,16 +14,16 @@ export default class Navbar extends Component {
   
     render() {
       return (
-        <Navbar default collapseOnSelect>
+        <Navbar bg="dark" variant="dark">
           <Navbar.Header>
-            <Navbar.Brand>
-              {this.props.title}
-            </Navbar.Brand>
+          <Navbar.Brand className="mx-auto">
+            {this.props.title}
+          </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
-            <Nav pullRight>
-              <NavItem eventKey={1} href="/">
+            <Nav >
+              <NavItem >
                 Home
               </NavItem>
               <NavItem onClick={this.goBack} />
