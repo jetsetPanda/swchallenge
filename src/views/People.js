@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Circlemenu from '../components/Circlemenu';
+import Navicategory from '../components/Navicategory';
 
 export default function People(props) {
   // init state
@@ -30,7 +31,7 @@ export default function People(props) {
   ) : (
     <div className="container">
       
-      <h1>PEOPLE</h1>
+      <Navicategory brand={'PEOPLE'}/>
 
         {dataset.map((people, index) => (
         <Link to={{ pathname: '/people/:id', state: { url : people.url }}}>

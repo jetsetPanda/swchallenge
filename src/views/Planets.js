@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Circlemenu from '../components/Circlemenu';
+import Spinner from 'react-bootstrap/Spinner';
+import Navicategory from '../components/Navicategory';
 
 export default function People(props) {
   // init state
@@ -26,11 +28,13 @@ export default function People(props) {
   }, []) // "[]" prevents useEffect from executing infinite loop
 
   return dataset.isLoading? (
-      <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
+    <Spinner animation="border" role="status">
+    <span className="sr-only">Loading...</span>
+    </Spinner>
   ) : (
     <div className="container">
-      
-      <h1>PLANETS</h1>
+
+      <Navicategory brand={'PLANETS'}/>
 
         {dataset.map((planet, index) => (
         <Link to={{ pathname: '/planets/:id', state: { url : planet.url }}}>

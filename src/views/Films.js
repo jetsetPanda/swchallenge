@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Circlemenu from '../components/Circlemenu';
 import Spinner from 'react-bootstrap/Spinner';
+import Navicategory from '../components/Navicategory';
 
 export default function Films(props) {
   // init state
@@ -33,18 +34,16 @@ export default function Films(props) {
   ) : (
     <div className="container">
 
-      <h1>Star Wars Films</h1>
-
-        {dataset.map((film, index) => (
+      <Navicategory brand={'FILMS'}/>
+      
+      {dataset.map((film, index) => (
         <Link to={{ pathname: '/films/:id', state: { url : film.url }}}>
             <div className="card mb-1">
                 <div className="card-body">
-                <Circlemenu text={film.title}/><h3 className="card-title">Episode {film.episode_id}: {film.title}</h3>
-                <h4 className="card-subtitle mb-3 text-muted">
-                    {film.opening_crawl}<br/>
-                    Id: {index+1}<br/>
-                    Released: {film.release_date}
-                </h4>
+                  <Circlemenu text={film.title}/><h3 className="card-title">{film.title}</h3>
+                  <h4 className="card-subtitle mb-3 text-muted">
+                      {film.opening_crawl}<br/>
+                  </h4>
                 </div>
             </div>
         </Link>
