@@ -30,7 +30,8 @@ export default function Filmsdetail(props) {
       <div className="jumbotron"><h1>Now Loading...</h1><h3>by jetsetEngine</h3></div>
   ) : (
     <div className="container">
-      <div className="jumbotron"><Circlejumbo text={dataset.title}/><h1>{dataset.title}</h1></div>
+      <div></div>
+      <div className="jumbotron text-center"><Circlejumbo text={dataset.title}/><h1>{dataset.title}</h1></div>
       <h2>Episode {dataset.episode_id} | Release: {dataset.release_date}</h2>
     </div>
   )

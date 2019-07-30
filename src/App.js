@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react'
 import './App.css';
-// import { render } from 'react-dom'
-import { Route, Switch} from 'react-router-dom'
-// import Drilldown from 'react-router-drilldown'
+import { render } from 'react-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import Drilldown from 'react-router-drilldown'
+
 import Home from './views/Home';
 import People from './views/People';
 import Films from './views/Films';
@@ -17,25 +18,86 @@ import Speciesdetail from './views/Speciesdetail';
 import Starshipsdetail from './views/Starshipsdetail';
 import Vehiclesdetail from './views/Vehiclesdetail';
 
+
 export default function App() {
-  return (
-    <Switch>
-      <Route exact path="/" component={Home} />
+
+const PeopleRoute = ({ match }) => (
+  <Drilldown>
       <Route exact path="/people" component={People} />
+      <Route path="/people/:id" exact component={Peopledetail} />  
+  </Drilldown>
+)
+
+const FilmRoute = ({ match }) => (
+  <Drilldown>
       <Route exact path="/films" component={Films} />
+      <Route path="/films/:id" exact component={Filmsdetail} />    
+  </Drilldown>
+)
+
+const StarshipsRoute = ({ match }) => (
+  <Drilldown>
       <Route exact path="/starships" component={Starships} />
+      <Route path="/starships/:id" exact component={Starshipsdetail} />    
+  </Drilldown>
+)
+
+const VehiclesRoute = ({ match }) => (
+  <Drilldown>
       <Route exact path="/vehicles" component={Vehicles} />
+      <Route path="/vehicles/:id" exact component={Vehiclesdetail} />  
+  </Drilldown>
+)
+
+const SpeciesRoute = ({ match }) => (
+  <Drilldown>
       <Route exact path="/species" component={Species} />
+      <Route path="/species/:id" exact component={Speciesdetail} />    
+  </Drilldown>
+)
+
+const PlanetsRoute = ({ match }) => (
+  <Drilldown>
       <Route exact path="/planets" component={Planets} />
-      <Route path="/films/:id" exact component={Filmsdetail} />
-      <Route path="/people/:id" exact component={Peopledetail} />
       <Route path="/planets/:id" exact component={Planetsdetail} />
-      <Route path="/species/:id" exact component={Speciesdetail} />
-      <Route path="/starships/:id" exact component={Starshipsdetail} />
-      <Route path="/vehicles/:id" exact component={Vehiclesdetail} />
+  </Drilldown>
+)
 
+  return (
+    <Router>
+      <Drilldown>
+        <Route exact path="/" component={Home} />
+        <Route path="/people" component={PeopleRoute} />
+        <Route path="/films" component={FilmRoute} />
+        <Route path="/starships" component={StarshipsRoute} />
+        <Route path="/vehicles" component={VehiclesRoute} />
+        <Route path="/species" component={SpeciesRoute} />
+        <Route path="/planets" component={PlanetsRoute} />    
+      </Drilldown>
 
-
-    </Switch>      
+    </Router>      
   )
 }
+
+
+
+
+// export default function App() {
+//   return (
+//     <Switch>
+//       <Route exact path="/" component={Home} />
+//       <Route exact path="/people" component={People} />
+      // <Route exact path="/films" component={Films} />
+      // <Route exact path="/starships" component={Starships} />
+      // <Route exact path="/vehicles" component={Vehicles} />
+      // <Route exact path="/species" component={Species} />
+      // <Route exact path="/planets" component={Planets} />
+//       <Route path="/films/:id" exact component={Filmsdetail} />
+//       <Route path="/people/:id" exact component={Peopledetail} />
+//       <Route path="/planets/:id" exact component={Planetsdetail} />
+//       <Route path="/species/:id" exact component={Speciesdetail} />
+//       <Route path="/starships/:id" exact component={Starshipsdetail} />
+//       <Route path="/vehicles/:id" exact component={Vehiclesdetail} />
+//     </Switch>      
+//   )
+// }
