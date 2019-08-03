@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css';
-import { render } from 'react-dom'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Drilldown from 'react-router-drilldown'
 
 import Home from './views/Home';
