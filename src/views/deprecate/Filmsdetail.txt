@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
+import '../../App.css';
 import axios from 'axios';
 import Circlejumbo from '../components/Circlejumbo';
 import Spinner from 'react-bootstrap/Spinner';

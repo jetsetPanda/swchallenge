@@ -9,12 +9,10 @@ import Category from "./views/Category";
 import CategoryDetail from "./views/CategoryDetail";
 
 import People from './views/People';
-import Films from './views/Films';
 import Starships from './views/Starships';
 import Vehicles from './views/Vehicles';
 import Species from './views/Species';
 import Planets from './views/Planets';
-import Filmsdetail from './views/Filmsdetail';
 import Peopledetail from './views/Peopledetail';
 import Planetsdetail from './views/Planetsdetail';
 import Speciesdetail from './views/Speciesdetail';
