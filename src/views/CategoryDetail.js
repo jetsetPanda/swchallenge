@@ -11,21 +11,23 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 
-export default function Filmsdetail(props) {
+export default function CategoryDetail(props) {
   // init state
   const initialState = {
     dataset: [],
       isLoading: true,
-  }
+  };
 
   // user state getter and setter via useState()
   const [dataset, setDataset] = useState(initialState);
 
+  console.log("THE PROPS ARE>>>>", props);
   const {url} = props.location.state;
 
   // useEffect method to get SWAPI data (my alternative to LM componentDidMount)
   useEffect(() => {
       const fetchData = async () => {
+          console.log("THE URL IS>>>> ",url);
           const { data } = await axios(url);
 
           setDataset(data);// results array to dataset: {} above
@@ -33,7 +35,7 @@ export default function Filmsdetail(props) {
       }
       //asynchronious function is invoked by:
       fetchData();
-  }, [url]) // "[]" prevents useEffect from executing infinite loop
+  }, [url]); // "[]" prevents useEffect from executing infinite loop
 
   return dataset.isLoading? (
     <Spinner animation="border" role="status">

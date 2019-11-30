@@ -50,24 +50,24 @@ export default function Filmsdetail(props) {
         </Navbar.Brand>
       </Navbar>
 
-      <Jumbotron className="text-center bg-dark"><Circlejumbo text={dataset.title}/>
-      <p className="swyellow">{dataset.opening_crawl}</p>
-      </Jumbotron>
-      
-      <Infobox name={'Episode ID'} value={dataset.episode_id} />
-      <Infobox name={'Director'} value={dataset.director} />
-      <Infobox name={'Producer'} value={dataset.producer} />
-      <Infobox name={'Release Date'} value={dataset.release_date} />
-      <Infoboxarray name={'Characters'} value={dataset.characters} />
-      <Infoboxarray name={'Planets'} value={dataset.planets} />
-      <Infoboxarray name={'Starships'} value={dataset.starships} />
-      <Infoboxarray name={'Vehicles'} value={dataset.vehicles} />
-      <Infoboxarray name={'Species'} value={dataset.species} />
-      <Infobox name={'Created'} value={dataset.created} />
-      <Infobox name={'Edited'} value={dataset.edited} />
-      <Infobox name={'URL'} value={dataset.url} />
+        <Jumbotron className="text-center bg-dark"><Circlejumbo text={dataset.title}/>
+            <p className="swyellow">{dataset.opening_crawl}</p>
+        </Jumbotron>
 
-      {/* <Infobox name={''} value={dataset.} /> */}
+        <Infobox name={'Episode ID'} value={dataset.episode_id} />
+        <Infobox name={'Director'} value={dataset.director} />
+        <Infobox name={'Producer'} value={dataset.producer} />
+        <Infobox name={'Release Date'} value={dataset.release_date} />
+        <Infoboxarray name={'Characters'} value={dataset.characters} />
+        <Infoboxarray name={'Planets'} value={dataset.planets} />
+        <Infoboxarray name={'Starships'} value={dataset.starships} />
+        <Infoboxarray name={'Vehicles'} value={dataset.vehicles} />
+        <Infoboxarray name={'Species'} value={dataset.species} />
+        <Infobox name={'Created'} value={dataset.created} />
+        <Infobox name={'Edited'} value={dataset.edited} />
+        <Infobox name={'URL'} value={dataset.url} />
+
+        {/* <Infobox name={''} value={dataset.} /> */}
 
     </div>
   )

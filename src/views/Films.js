@@ -40,7 +40,6 @@ export default function Films(props) {
       <Quote />
       {dataset.map((film, index) => (
 
-        
         <Link to={{ pathname: '/films/:id', state: { url : film.url }}} style={{textDecoration: 'none'}} >
             <div className="card mb-1">
                 <div className="card-body ">

@@ -4,6 +4,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Drilldown from 'react-router-drilldown'
 
 import Home from './views/Home';
+
+import Category from "./views/Category";
+import CategoryDetail from "./views/CategoryDetail";
+
 import People from './views/People';
 import Films from './views/Films';
 import Starships from './views/Starships';
@@ -29,8 +33,9 @@ const PeopleRoute = ({ match }) => (
 
 const FilmRoute = ({ match }) => (
   <Drilldown>
-      <Route exact path="/films" component={Films} />
-      <Route path="/films/:id" exact component={Filmsdetail} />    
+      <Route exact path="/films" render={(props) => <Category {...props} category={'films'}/>} />
+      <Route path="/films/detail" exact component={CategoryDetail} />
+      {/*render={(props) => <CategoryDetail {...props} category={'films'}/>} />*/}
   </Drilldown>
 )
 
