@@ -9,7 +9,7 @@ function DetailJumbotron (props) {
     const dataset = props.dataset;
     let text = category === 'films' ? dataset.title
         : 'meh';
-    let content = category === 'films' ? {dataset.opening_crawl} : 'meh';
+    let content = category === 'films' ? dataset.opening_crawl : 'meh';
 
     return (
         <Jumbotron className="text-center bg-dark"><Circlejumbo text={text}/>

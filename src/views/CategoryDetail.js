@@ -13,7 +13,8 @@ export default function CategoryDetail(props) {
   // init state
   const initialState = {
     dataset: [],
-      isLoading: true,
+
+    isLoading: true,
   };
 
   // user state getter and setter via useState()
