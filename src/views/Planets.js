@@ -44,9 +44,9 @@ export default function People(props) {
                 <div className="card-body">
                     <Circlemenu  text={planet.name}/><h3 className="card-title menufont">{planet.name}</h3>
                     <h4 className="card-subtitle mb-3  menufont">
-                        {planet.diameter}            
-                    </h4>
-                </div>
+                        {planet.diameter}
+            </h4>
+        </div>
             </div>
         </Link>
         ))}

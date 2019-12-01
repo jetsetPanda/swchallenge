@@ -3,29 +3,30 @@ import '../App.css';
 import axios from 'axios';
 import Circlejumbo from '../components/Circlejumbo';
 import Spinner from 'react-bootstrap/Spinner';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Navbar from 'react-bootstrap/Navbar';
+import DetailJumbotron from "../components/DetailJumbotron";
+import NaviCategoryDetail from "../components/NaviCategoryDetail";
 import Infobox from '../components/Infobox';
 import Infoboxarray from '../components/Infoboxarray';
-import Button from 'react-bootstrap/Button';
-import { withRouter, Link } from 'react-router-dom';
 
 
-export default function Filmsdetail(props) {
+export default function CategoryDetail(props) {
   // init state
   const initialState = {
     dataset: [],
-      isLoading: true,
-  }
+
+    isLoading: true,
+  };
 
   // user state getter and setter via useState()
   const [dataset, setDataset] = useState(initialState);
 
+  console.log("THE PROPS ARE>>>>", props);
   const {url} = props.location.state;
 
   // useEffect method to get SWAPI data (my alternative to LM componentDidMount)
   useEffect(() => {
       const fetchData = async () => {
+          console.log("THE URL IS>>>> ",url);
           const { data } = await axios(url);
 
           setDataset(data);// results array to dataset: {} above
@@ -33,7 +34,7 @@ export default function Filmsdetail(props) {
       }
       //asynchronious function is invoked by:
       fetchData();
-  }, [url]) // "[]" prevents useEffect from executing infinite loop
+  }, [url]); // "[]" prevents useEffect from executing infinite loop
 
   return dataset.isLoading? (
     <Spinner animation="border" role="status">
@@ -41,19 +42,11 @@ export default function Filmsdetail(props) {
     </Spinner>
   ) : (
     <div className="container">
-      <Navbar bg="dark" variant="dark">
-      <Link to={{ pathname: '/films'}}>
-          <Button variant="outline-light text-white">&#8249;</Button>
-        </Link>  
-        <Navbar.Brand className="mx-auto">
-          {dataset.title}
-        </Navbar.Brand>
-      </Navbar>
 
-      <Jumbotron className="text-center bg-dark"><Circlejumbo text={dataset.title}/>
-      <p className="swyellow">{dataset.opening_crawl}</p>
-      </Jumbotron>
-      
+      <NaviCategoryDetail dataset={dataset} category={props.category} />
+
+      <DetailJumbotron dataset={dataset} category={props.category} />
+
       <Infobox name={'Episode ID'} value={dataset.episode_id} />
       <Infobox name={'Director'} value={dataset.director} />
       <Infobox name={'Producer'} value={dataset.producer} />

@@ -4,13 +4,15 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Drilldown from 'react-router-drilldown'
 
 import Home from './views/Home';
+
+import Category from "./views/Category";
+import CategoryDetail from "./views/CategoryDetail";
+
 import People from './views/People';
-import Films from './views/Films';
 import Starships from './views/Starships';
 import Vehicles from './views/Vehicles';
 import Species from './views/Species';
 import Planets from './views/Planets';
-import Filmsdetail from './views/Filmsdetail';
 import Peopledetail from './views/Peopledetail';
 import Planetsdetail from './views/Planetsdetail';
 import Speciesdetail from './views/Speciesdetail';
@@ -29,8 +31,8 @@ const PeopleRoute = ({ match }) => (
 
 const FilmRoute = ({ match }) => (
   <Drilldown>
-      <Route exact path="/films" component={Films} />
-      <Route path="/films/:id" exact component={Filmsdetail} />    
+      <Route exact path="/films" render={(props) => <Category {...props} category={'films'}/>} />
+      <Route path="/films/detail" render={(props) => <CategoryDetail {...props} category={'films'}/>} />
   </Drilldown>
 )
 
