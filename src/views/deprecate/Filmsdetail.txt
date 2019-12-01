@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
+import '../../App.css';
 import axios from 'axios';
 import Circlejumbo from '../components/Circlejumbo';
 import Spinner from 'react-bootstrap/Spinner';
@@ -17,7 +17,7 @@ export default function Filmsdetail(props) {
     dataset: [],
       isLoading: true,
   }
-
+    console.log('MX PROPS ARE: ',props);
   // user state getter and setter via useState()
   const [dataset, setDataset] = useState(initialState);
 

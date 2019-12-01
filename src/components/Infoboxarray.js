@@ -6,7 +6,7 @@ const Infoboxarray = props => (
         <div>
             <h6>{props.name}</h6>
             {props.value.map((item) => (
-                <span><h4>{item}</h4><br/></span> 
+                <span><h4>{item}</h4><br/></span>
             ))}
             <div className="blackbar"></div>
         </div>

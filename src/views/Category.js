@@ -12,6 +12,7 @@ export default function Category(props) {
     const initialState = {
         dataset: [],
         isLoading: true,
+
     }
 
     // user state getter and setter via useState()
@@ -34,7 +35,7 @@ export default function Category(props) {
         fetchData();
     }, []); // "[]" prevents useEffect from executing infinite loop
 
-    console.log('dataset 3 :', dataset);
+
     // console.log('loading 3 :', isLoading); // investigate isLoading
 
     return dataset.isLoading? (
