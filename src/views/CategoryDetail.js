@@ -3,12 +3,10 @@ import '../App.css';
 import axios from 'axios';
 import Circlejumbo from '../components/Circlejumbo';
 import Spinner from 'react-bootstrap/Spinner';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import DetailJumbotron from "../components/DetailJumbotron";
 import NaviCategoryDetail from "../components/NaviCategoryDetail";
 import Infobox from '../components/Infobox';
 import Infoboxarray from '../components/Infoboxarray';
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 
 
 export default function CategoryDetail(props) {
@@ -46,10 +44,8 @@ export default function CategoryDetail(props) {
 
       <NaviCategoryDetail dataset={dataset} category={props.category} />
 
-      <Jumbotron className="text-center bg-dark"><Circlejumbo text={dataset.title}/>
-      <p className="swyellow">{dataset.opening_crawl}</p>
-      </Jumbotron>
-      
+      <DetailJumbotron dataset={dataset} category={props.category} />
+
       <Infobox name={'Episode ID'} value={dataset.episode_id} />
       <Infobox name={'Director'} value={dataset.director} />
       <Infobox name={'Producer'} value={dataset.producer} />
