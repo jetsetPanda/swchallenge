@@ -32,8 +32,7 @@ const PeopleRoute = ({ match }) => (
 const FilmRoute = ({ match }) => (
   <Drilldown>
       <Route exact path="/films" render={(props) => <Category {...props} category={'films'}/>} />
-      <Route path="/films/detail" exact component={CategoryDetail} />
-      {/*render={(props) => <CategoryDetail {...props} category={'films'}/>} />*/}
+      <Route path="/films/detail" render={(props) => <CategoryDetail {...props} category={'films'}/>} />
   </Drilldown>
 )
 

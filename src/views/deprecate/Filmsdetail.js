@@ -17,7 +17,7 @@ export default function Filmsdetail(props) {
     dataset: [],
       isLoading: true,
   }
-
+    console.log('MX PROPS ARE: ',props);
   // user state getter and setter via useState()
   const [dataset, setDataset] = useState(initialState);
 
