@@ -19,7 +19,7 @@ export default function Starships(props) {
   // useEffect method to get SWAPI data (my alternative to LM componentDidMount)
   useEffect(() => {
       const fetchData = async () => {
-          const { data } = await axios(`https://swapi.co/api/starships/`);
+          const { data } = await axios(`https://swapi.dev/api/starships/`);
 
           setDataset(data.results);// results array to dataset: [] above
           console.log(data.results);

@@ -8,7 +8,7 @@ export default function GetPeople() {
     function APIPeople() {
         let people = [];
         // first page
-        return axios("https://swapi.co/api/people/")
+        return axios("https://swapi.dev/api/people/")
             .then(response => {
                 console.log("response from people call: ", response);
                 // first page response
@@ -21,7 +21,7 @@ export default function GetPeople() {
                 let promises = [];
                 // starting at 2 as first page has been called
                 for (let i = 2; i <= numberOfPagesLeft; i++) {
-                    promises.push(axios(`https://swapi.co/api/people?page=${i}`));
+                    promises.push(axios(`https://swapi.dev/api/people?page=${i}`));
                 }
                 return Promise.all(promises);
             })

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const swapi = () => {
     const [data, setData] = useState({ data: [] });
-    const [url, setUrl] = useState(`https://swapi.co/api/films/`);
+    const [url, setUrl] = useState(`https://swapi.dev/api/films/`);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
